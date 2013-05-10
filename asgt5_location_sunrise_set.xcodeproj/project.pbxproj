@@ -19,6 +19,15 @@
 		3D70211717389D70000AD095 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D70211517389D70000AD095 /* MainStoryboard_iPhone.storyboard */; };
 		3D70211A17389D70000AD095 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D70211817389D70000AD095 /* MainStoryboard_iPad.storyboard */; };
 		3D70211D17389D70000AD095 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70211C17389D70000AD095 /* ViewController.m */; };
+		3D70212517397799000AD095 /* USCitiesTimezoneDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70212417397799000AD095 /* USCitiesTimezoneDatabase.m */; };
+		3D702127173977C3000AD095 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D702126173977C3000AD095 /* libsqlite3.0.dylib */; };
+		3D702129173977CD000AD095 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D702128173977CD000AD095 /* CoreLocation.framework */; };
+		3D70212E1739A640000AD095 /* us_cities_with_timezones.sl3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D70212D1739A640000AD095 /* us_cities_with_timezones.sl3 */; };
+		3D7021311739CC82000AD095 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7021301739CC81000AD095 /* State.m */; };
+		3D70213A1739E777000AD095 /* StateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7021391739E777000AD095 /* StateTableViewController.m */; };
+		3D70213D1739E784000AD095 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70213C1739E784000AD095 /* CityTableViewController.m */; };
+		3D7021401739E90B000AD095 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70213F1739E90B000AD095 /* City.m */; };
+		3D702142173C3457000AD095 /* libiOSnova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D702141173C3457000AD095 /* libiOSnova.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +48,20 @@
 		3D70211917389D70000AD095 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		3D70211B17389D70000AD095 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3D70211C17389D70000AD095 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3D70212317397799000AD095 /* USCitiesTimezoneDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCitiesTimezoneDatabase.h; sourceTree = "<group>"; };
+		3D70212417397799000AD095 /* USCitiesTimezoneDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCitiesTimezoneDatabase.m; sourceTree = "<group>"; };
+		3D702126173977C3000AD095 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		3D702128173977CD000AD095 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3D70212D1739A640000AD095 /* us_cities_with_timezones.sl3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = us_cities_with_timezones.sl3; sourceTree = "<group>"; };
+		3D70212F1739CC81000AD095 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		3D7021301739CC81000AD095 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		3D7021381739E777000AD095 /* StateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTableViewController.h; sourceTree = "<group>"; };
+		3D7021391739E777000AD095 /* StateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateTableViewController.m; sourceTree = "<group>"; };
+		3D70213B1739E784000AD095 /* CityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewController.h; sourceTree = "<group>"; };
+		3D70213C1739E784000AD095 /* CityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewController.m; sourceTree = "<group>"; };
+		3D70213E1739E90B000AD095 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		3D70213F1739E90B000AD095 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		3D702141173C3457000AD095 /* libiOSnova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiOSnova.a; path = "../../../../Library/Developer/Xcode/DerivedData/Asgt5Workspace-atvwhfyzblquycdnbfddlzoeoxyf/Build/Products/Debug-iphoneos/libiOSnova.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D702142173C3457000AD095 /* libiOSnova.a in Frameworks */,
+				3D702129173977CD000AD095 /* CoreLocation.framework in Frameworks */,
+				3D702127173977C3000AD095 /* libsqlite3.0.dylib in Frameworks */,
 				3D7020FE17389D6F000AD095 /* UIKit.framework in Frameworks */,
 				3D70210017389D6F000AD095 /* Foundation.framework in Frameworks */,
 				3D70210217389D6F000AD095 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +84,9 @@
 		3D7020F117389D6F000AD095 = {
 			isa = PBXGroup;
 			children = (
+				3D702141173C3457000AD095 /* libiOSnova.a */,
+				3D702128173977CD000AD095 /* CoreLocation.framework */,
+				3D702126173977C3000AD095 /* libsqlite3.0.dylib */,
 				3D70210317389D70000AD095 /* asgt5_location_sunrise_set */,
 				3D7020FC17389D6F000AD095 /* Frameworks */,
 				3D7020FB17389D6F000AD095 /* Products */,
@@ -91,6 +120,16 @@
 				3D70211817389D70000AD095 /* MainStoryboard_iPad.storyboard */,
 				3D70211B17389D70000AD095 /* ViewController.h */,
 				3D70211C17389D70000AD095 /* ViewController.m */,
+				3D7021381739E777000AD095 /* StateTableViewController.h */,
+				3D7021391739E777000AD095 /* StateTableViewController.m */,
+				3D70213B1739E784000AD095 /* CityTableViewController.h */,
+				3D70213C1739E784000AD095 /* CityTableViewController.m */,
+				3D70212317397799000AD095 /* USCitiesTimezoneDatabase.h */,
+				3D70212417397799000AD095 /* USCitiesTimezoneDatabase.m */,
+				3D70212F1739CC81000AD095 /* State.h */,
+				3D7021301739CC81000AD095 /* State.m */,
+				3D70213E1739E90B000AD095 /* City.h */,
+				3D70213F1739E90B000AD095 /* City.m */,
 				3D70210417389D70000AD095 /* Supporting Files */,
 			);
 			path = asgt5_location_sunrise_set;
@@ -99,6 +138,7 @@
 		3D70210417389D70000AD095 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D70212D1739A640000AD095 /* us_cities_with_timezones.sl3 */,
 				3D70210517389D70000AD095 /* asgt5_location_sunrise_set-Info.plist */,
 				3D70210617389D70000AD095 /* InfoPlist.strings */,
 				3D70210917389D70000AD095 /* main.m */,
@@ -167,6 +207,7 @@
 				3D70211417389D70000AD095 /* Default-568h@2x.png in Resources */,
 				3D70211717389D70000AD095 /* MainStoryboard_iPhone.storyboard in Resources */,
 				3D70211A17389D70000AD095 /* MainStoryboard_iPad.storyboard in Resources */,
+				3D70212E1739A640000AD095 /* us_cities_with_timezones.sl3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +221,11 @@
 				3D70210A17389D70000AD095 /* main.m in Sources */,
 				3D70210E17389D70000AD095 /* AppDelegate.m in Sources */,
 				3D70211D17389D70000AD095 /* ViewController.m in Sources */,
+				3D70212517397799000AD095 /* USCitiesTimezoneDatabase.m in Sources */,
+				3D7021311739CC82000AD095 /* State.m in Sources */,
+				3D70213A1739E777000AD095 /* StateTableViewController.m in Sources */,
+				3D70213D1739E784000AD095 /* CityTableViewController.m in Sources */,
+				3D7021401739E90B000AD095 /* City.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +322,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "asgt5_location_sunrise_set/asgt5_location_sunrise_set-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/**";
 				INFOPLIST_FILE = "asgt5_location_sunrise_set/asgt5_location_sunrise_set-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Asgt5Workspace-atvwhfyzblquycdnbfddlzoeoxyf/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,7 +338,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "asgt5_location_sunrise_set/asgt5_location_sunrise_set-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(BUILT_PRODUCTS_DIR)/**";
 				INFOPLIST_FILE = "asgt5_location_sunrise_set/asgt5_location_sunrise_set-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/Asgt5Workspace-atvwhfyzblquycdnbfddlzoeoxyf/Build/Products/Debug-iphoneos\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +368,7 @@
 				3D70212217389D70000AD095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
