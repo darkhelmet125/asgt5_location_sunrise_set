@@ -51,14 +51,7 @@
     {
         NSLog(@"successful segue");
         StateTableViewController* detailVC = segue.destinationViewController;
-        //NSIndexPath *selectedRowIndex = [self.stateList indexPathForSelectedRow];
         detailVC.states = self.stateList;
-        /*
-        for (State* s in detailVC.states)
-        {
-            NSLog(@"%@",s.stateName );
-        }
-         */
     }
 }
 @end

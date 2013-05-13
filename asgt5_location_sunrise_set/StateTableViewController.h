@@ -12,5 +12,6 @@
 @interface StateTableViewController : UITableViewController
 
 @property (nonatomic, retain) NSArray* states;
+@property int rowPressed;
 
 @end

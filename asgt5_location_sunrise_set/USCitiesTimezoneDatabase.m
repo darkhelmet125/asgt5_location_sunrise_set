@@ -66,7 +66,7 @@ static USCitiesTimezoneDatabase* _databaseObj;
 - (NSArray*) byCity:(NSString*) stateName
 {
     NSMutableArray* rv = [[NSMutableArray alloc] init];
-    NSString* query = @"SELECT * FROM cities where state = '%@' order by name;";
+    NSString* query = [NSString stringWithFormat: @"SELECT * FROM cities where state = '%@' order by name;", stateName];
     sqlite3_stmt *stmt;
     const unsigned char* text;
     NSString  *city, *state, *timezone;

@@ -18,6 +18,7 @@
 @implementation StateTableViewController
 
 @synthesize states;
+@synthesize rowPressed;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,13 +38,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //self.states = [[USCitiesTimezoneDatabase database] byState];
-    /*
-    for (State* s in self.states)
-    {
-        NSLog(@"%@",s.stateName );
-    }
-    */
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,7 +76,6 @@
     
     State *state = [self.states objectAtIndex: indexPath.row];
     cell.textLabel.text = state.stateName;
-    NSLog(@"%@", state.stateName);
     
     return cell;
 }
@@ -130,27 +123,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
     /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    // Navigation logic may go here. Create and push another view controller.
+     CityTableViewController *detailViewController = [[CityTableViewController alloc] initWithNibName:@"City" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    rowPressed = indexPath.row;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath* indexPath;
-    City *city;
-    city.state = [self.states objectAtIndex: indexPath.row];
+    //
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"citySegue"])
     {
         CityTableViewController* detailVC = segue.destinationViewController;
-        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        detailVC.cities = [self.states objectAtIndex:selectedRowIndex.row];
-        detailVC.state = city.state;
+        State* stateV = [self.states objectAtIndex:rowPressed];
+        detailVC.state = stateV.stateName;
+        //NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+        detailVC.cities = [self.states objectAtIndex:rowPressed];
         NSLog(@"successful segue");
     }
 }
