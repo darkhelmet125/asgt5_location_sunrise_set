@@ -16,5 +16,7 @@
 
 @property (nonatomic, retain) NSArray* cities;
 @property (nonatomic, retain) NSString* state;
+@property int rowPressed;
+@property (nonatomic, retain) City* myCity;
 
 @end

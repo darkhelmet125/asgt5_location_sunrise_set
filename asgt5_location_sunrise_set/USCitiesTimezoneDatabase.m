@@ -39,10 +39,10 @@ static USCitiesTimezoneDatabase* _databaseObj;
 - (NSArray*) byState
 {
     NSMutableArray* rv = [[NSMutableArray alloc] init];
-    NSString* query = @"SELECT distinct state,time_zone FROM cities order by state;";
+    NSString* query = @"SELECT distinct state FROM cities order by state;";
     sqlite3_stmt *stmt;
     const unsigned char* text;
-    NSString *state, *timezone;
+    NSString *state;
     if( sqlite3_prepare_v2(_databaseConnection, [query UTF8String], [query length], &stmt, nil) == SQLITE_OK){
         while( sqlite3_step(stmt) == SQLITE_ROW){
             text = sqlite3_column_text(stmt, 0);
@@ -50,12 +50,7 @@ static USCitiesTimezoneDatabase* _databaseObj;
                 state = [NSString stringWithCString: (const char*)text encoding:NSUTF8StringEncoding];
             else
                 state = nil;
-            text = sqlite3_column_text(stmt, 1);
-            if(text)
-                timezone = [NSString stringWithCString:(const char*)text encoding:NSUTF8StringEncoding];
-            else
-                timezone = nil;
-            State *thisState = [[State alloc] initWithState:state andTimezone:timezone];
+            State *thisState = [[State alloc] initWithState:state];
             [rv addObject: thisState];
         }
         sqlite3_finalize(stmt);

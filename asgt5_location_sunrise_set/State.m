@@ -11,16 +11,14 @@
 @implementation State
 
 @synthesize stateName;
-@synthesize timezone;
 
 
--(id) initWithState:(NSString*) theState andTimezone:(NSString*) theTimezone
+-(id) initWithState:(NSString*) theState
 {
     self = [super init];
     if(self)
     {
         stateName = theState;
-        timezone = theTimezone;
     }
     return self;
 }

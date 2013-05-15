@@ -7,6 +7,12 @@
 //
 
 #import "CityTableViewController.h"
+#include <libnova/solar.h>
+#include <libnova/julian_day.h>
+#include <libnova/rise_set.h>
+#include <libnova/transform.h>
+#include <libnova/utility.h>
+#include <libnova/refraction.h>
 
 @interface CityTableViewController ()
 
@@ -16,6 +22,8 @@
 
 @synthesize cities;
 @synthesize state;
+@synthesize rowPressed;
+@synthesize myCity;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -126,15 +134,45 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    rowPressed = indexPath.row;
+    myCity = [self.cities objectAtIndex:rowPressed];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    static struct ln_lnlat_posn observer;
+    static double JD;
+    static struct ln_helio_posn pos;
+    static struct ln_equ_posn equ;
+    
+    observer.lat = myCity.coord.latitude;
+    observer.lng = myCity.coord.longitude;
+    NSLog(@"Latitude:%f",observer.lat);
+    NSLog(@"Longitude:%f",observer.lng);
+    
+    JD = ln_get_julian_from_sys();
+    ln_get_solar_geom_coords(JD, &pos);
+    ln_get_solar_equ_coords(JD, &equ);
+    
+    struct ln_rst_time rst;
+    struct ln_zonedate rise, set, transit;
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"backToViewSegue"])
     {
-        //ViewController* detailVC = segue.destinationViewController;
-        //
+        ViewController* detailVC = segue.destinationViewController;
+
+        if( ln_get_solar_rst_horizon(JD, &observer, LN_SOLAR_STANDART_HORIZON, &rst) == 1 )
+        {
+            printf ("Sun is circumpolar\n");
+        }
+        else
+        {
+            ln_get_local_date(rst.rise, &rise);
+            ln_get_local_date(rst.transit, &transit);
+            ln_get_local_date(rst.set, &set);
+            detailVC.sunriseTime.text = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds)];
+            detailVC.sunsetTime.text = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds)];
+        }
     }
 }
 

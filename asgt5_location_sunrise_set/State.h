@@ -11,8 +11,7 @@
 @interface State : NSObject
 
 @property (nonatomic, retain) NSString* stateName;
-@property (nonatomic, retain) NSString* timezone;
 
--(id) initWithState:(NSString*) theState andTimezone:(NSString*) theTimezone;
+-(id) initWithState:(NSString*) theState;
 
 @end

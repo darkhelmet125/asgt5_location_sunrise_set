@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "StateTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
-#import <libnova/solar.h>
+#include <libnova/solar.h>
+#include <libnova/julian_day.h>
+#include <libnova/rise_set.h>
+#include <libnova/transform.h>
+#include <libnova/utility.h>
+#include <libnova/refraction.h>
 
 @interface ViewController ()
 
