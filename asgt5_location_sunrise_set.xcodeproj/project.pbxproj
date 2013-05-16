@@ -28,6 +28,7 @@
 		3D70213D1739E784000AD095 /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70213C1739E784000AD095 /* CityTableViewController.m */; };
 		3D7021401739E90B000AD095 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D70213F1739E90B000AD095 /* City.m */; };
 		3D702142173C3457000AD095 /* libiOSnova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D702141173C3457000AD095 /* libiOSnova.a */; };
+		3D7C052F17448F8D007E2CBD /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C052E17448F8D007E2CBD /* detailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		3D70213E1739E90B000AD095 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		3D70213F1739E90B000AD095 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		3D702141173C3457000AD095 /* libiOSnova.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiOSnova.a; path = "../../../../Library/Developer/Xcode/DerivedData/Asgt5Workspace-atvwhfyzblquycdnbfddlzoeoxyf/Build/Products/Debug-iphoneos/libiOSnova.a"; sourceTree = "<group>"; };
+		3D7C052D17448F8C007E2CBD /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
+		3D7C052E17448F8D007E2CBD /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				3D7021391739E777000AD095 /* StateTableViewController.m */,
 				3D70213B1739E784000AD095 /* CityTableViewController.h */,
 				3D70213C1739E784000AD095 /* CityTableViewController.m */,
+				3D7C052D17448F8C007E2CBD /* detailViewController.h */,
+				3D7C052E17448F8D007E2CBD /* detailViewController.m */,
 				3D70212317397799000AD095 /* USCitiesTimezoneDatabase.h */,
 				3D70212417397799000AD095 /* USCitiesTimezoneDatabase.m */,
 				3D70212F1739CC81000AD095 /* State.h */,
@@ -226,6 +231,7 @@
 				3D70213A1739E777000AD095 /* StateTableViewController.m in Sources */,
 				3D70213D1739E784000AD095 /* CityTableViewController.m in Sources */,
 				3D7021401739E90B000AD095 /* City.m in Sources */,
+				3D7C052F17448F8D007E2CBD /* detailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

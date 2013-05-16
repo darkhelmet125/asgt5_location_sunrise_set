@@ -7,6 +7,7 @@
 //
 
 #import "CityTableViewController.h"
+#import "detailViewController.h"
 #include <libnova/solar.h>
 #include <libnova/julian_day.h>
 #include <libnova/rise_set.h>
@@ -134,12 +135,15 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    rowPressed = indexPath.row;
-    myCity = [self.cities objectAtIndex:rowPressed];
+    //rowPressed = indexPath.row;
+    //myCity = [self.cities objectAtIndex:rowPressed];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+    self.myCity = [self.cities objectAtIndex:selectedRowIndex.row];
     static struct ln_lnlat_posn observer;
     static double JD;
     static struct ln_helio_posn pos;
@@ -147,8 +151,6 @@
     
     observer.lat = myCity.coord.latitude;
     observer.lng = myCity.coord.longitude;
-    NSLog(@"Latitude:%f",observer.lat);
-    NSLog(@"Longitude:%f",observer.lng);
     
     JD = ln_get_julian_from_sys();
     ln_get_solar_geom_coords(JD, &pos);
@@ -157,9 +159,11 @@
     struct ln_rst_time rst;
     struct ln_zonedate rise, set, transit;
     NSLog(@"prepareForSegue: %@", segue.identifier);
-    if ([segue.identifier isEqualToString:@"backToViewSegue"])
+    if ([segue.identifier isEqualToString:@"detailViewSegue"])
     {
-        ViewController* detailVC = segue.destinationViewController;
+        detailViewController* detailVC = segue.destinationViewController;
+        
+        NSLog(@"%p",detailVC);
 
         if( ln_get_solar_rst_horizon(JD, &observer, LN_SOLAR_STANDART_HORIZON, &rst) == 1 )
         {
@@ -170,8 +174,32 @@
             ln_get_local_date(rst.rise, &rise);
             ln_get_local_date(rst.transit, &transit);
             ln_get_local_date(rst.set, &set);
-            detailVC.sunriseTime.text = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds)];
-            detailVC.sunsetTime.text = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds)];
+            NSString* sunrise = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds)];
+            NSString* sunset = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds)];
+            NSString* travel = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",transit.hours,transit.minutes,(int)round(transit.seconds)];
+            
+            NSLog(@"sunrise: %@",sunrise);
+            NSLog(@"sunset: %@",sunset);
+            NSLog(@"travel: %@",travel);
+            
+            detailVC.sunriseLabel.text = sunrise;
+            detailVC.sunsetLabel.text = sunset;
+            detailVC.travelTimeLabel.text = travel;
+            if(detailVC == nil)
+                NSLog(@"detailVC is nil");
+            if(detailVC.sunriseLabel == nil)
+                NSLog(@"detailVC.sunriseTime is nil");
+            if(detailVC.sunriseLabel.text == nil)
+                NSLog(@"detailVC.sunriseTime.text is nil");
+            
+            if(detailVC.sunsetLabel == nil)
+                NSLog(@"detailVC.sunsetTime is nil");
+            if(detailVC.sunsetLabel.text == nil)
+                NSLog(@"detailVC.sunsetTime.text is nil");
+            
+            NSLog(@"rise: %.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds));
+            NSLog(@"set: %.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds));
+            NSLog(@"travel: %.2d:%.2d:%.2d",transit.hours,transit.minutes,(int)round(transit.seconds));
         }
     }
 }

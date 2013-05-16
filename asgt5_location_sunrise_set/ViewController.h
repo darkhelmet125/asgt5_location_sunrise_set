@@ -14,9 +14,5 @@
 @interface ViewController : UIViewController
 - (IBAction)findMeButtonPress:(id)sender;
 - (IBAction)chooseLocationButtonPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *userLocation;
-@property (weak, nonatomic) IBOutlet UILabel *sunriseTime;
-@property (weak, nonatomic) IBOutlet UILabel *sunsetTime;
-@property (weak, nonatomic) IBOutlet UILabel *travelTime;
 @property (nonatomic, retain) NSArray* stateList;
 @end

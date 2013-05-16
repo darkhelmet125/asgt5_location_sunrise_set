@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "City.h"
-#import "ViewController.h"
 #import "USCitiesTimezoneDatabase.h"
 
 @interface CityTableViewController : UITableViewController

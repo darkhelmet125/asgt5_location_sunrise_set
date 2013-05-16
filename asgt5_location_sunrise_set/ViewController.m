@@ -22,11 +22,7 @@
 
 @implementation ViewController
 
-@synthesize sunriseTime;
-@synthesize sunsetTime;
-@synthesize travelTime;
 @synthesize stateList;
-@synthesize userLocation;
 
 - (void)viewDidLoad
 {

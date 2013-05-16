@@ -130,20 +130,23 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    rowPressed = indexPath.row;
+    //self.rowPressed = indexPath.row;
+    //NSLog(@"rowPressed initialized: %d", self.rowPressed);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //NSLog(@"rowPressed passed: %d",self.rowPressed);
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"citySegue"])
     {
+        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
         CityTableViewController* detailVC = segue.destinationViewController;
-        State* stateV = [self.states objectAtIndex:rowPressed];
+        State* stateV = [self.states objectAtIndex:selectedRowIndex.row];
         detailVC.state = stateV.stateName;
-        //NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        detailVC.cities = [self.states objectAtIndex:rowPressed];
+        detailVC.cities = [self.states objectAtIndex:selectedRowIndex.row];
         NSLog(@"successful segue");
+        NSLog(@"NSIndexPath num: %d",selectedRowIndex.row);
     }
 }
 
