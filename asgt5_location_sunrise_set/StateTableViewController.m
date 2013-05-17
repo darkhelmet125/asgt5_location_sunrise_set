@@ -130,8 +130,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    //self.rowPressed = indexPath.row;
-    //NSLog(@"rowPressed initialized: %d", self.rowPressed);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

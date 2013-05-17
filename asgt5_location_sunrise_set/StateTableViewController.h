@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "USCitiesTimezoneDatabase.h"
 
-@interface StateTableViewController : UITableViewController
+@interface StateTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) NSArray* states;
 @property int rowPressed;

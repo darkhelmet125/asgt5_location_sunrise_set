@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RiseSetTravelTimes.h"
+#import "City.h"
 
 @interface detailViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *userLocation;
 @property (weak, nonatomic) IBOutlet UILabel *timezone;
 @property (retain, nonatomic) IBOutlet UILabel *sunriseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sunsetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
+@property City* myCity;
+@property RiseSetTravelTimes* myTimes;
 
 @end

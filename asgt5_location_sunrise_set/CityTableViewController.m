@@ -23,8 +23,11 @@
 
 @synthesize cities;
 @synthesize state;
-@synthesize rowPressed;
 @synthesize myCity;
+@synthesize mySunTimes;
+@synthesize mySunrise;
+@synthesize mySunset;
+@synthesize myTravel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -135,8 +138,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    //rowPressed = indexPath.row;
-    //myCity = [self.cities objectAtIndex:rowPressed];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -174,28 +175,34 @@
             ln_get_local_date(rst.rise, &rise);
             ln_get_local_date(rst.transit, &transit);
             ln_get_local_date(rst.set, &set);
+
             NSString* sunrise = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds)];
             NSString* sunset = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds)];
             NSString* travel = [NSString stringWithFormat:@"%.2d:%.2d:%.2d",transit.hours,transit.minutes,(int)round(transit.seconds)];
             
-            NSLog(@"sunrise: %@",sunrise);
-            NSLog(@"sunset: %@",sunset);
-            NSLog(@"travel: %@",travel);
+            self.mySunrise = sunrise;
+            self.mySunset = sunset;
+            self.myTravel = travel;
             
-            detailVC.sunriseLabel.text = sunrise;
-            detailVC.sunsetLabel.text = sunset;
-            detailVC.travelTimeLabel.text = travel;
-            if(detailVC == nil)
-                NSLog(@"detailVC is nil");
-            if(detailVC.sunriseLabel == nil)
-                NSLog(@"detailVC.sunriseTime is nil");
-            if(detailVC.sunriseLabel.text == nil)
-                NSLog(@"detailVC.sunriseTime.text is nil");
+            [self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:self.mySunset andTravelTime:self.myTravel];
             
-            if(detailVC.sunsetLabel == nil)
-                NSLog(@"detailVC.sunsetTime is nil");
-            if(detailVC.sunsetLabel.text == nil)
-                NSLog(@"detailVC.sunsetTime.text is nil");
+            NSLog(@"sunrise: %@",self.mySunTimes.riseTime);
+            NSLog(@"sunset: %@",self.mySunTimes.setTime);
+            NSLog(@"travel: %@",self.mySunTimes.travelTime);
+            
+            detailVC.myCity = [self.cities objectAtIndex:selectedRowIndex.row];
+            //detailVC.myTimes = [self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:mySunset andTravelTime:myTravel];
+            
+            /*
+            NSLog(@"sunrise1: %@",detailVC.myTimes.riseTime);
+            NSLog(@"sunset1: %@",detailVC.myTimes.setTime);
+            NSLog(@"travel1: %@",detailVC.myTimes.travelTime);
+            */
+            
+            if(self.mySunTimes == nil)
+                NSLog(@"mySunTimes is nil");
+            if(self.mySunTimes.riseTime == nil)
+                NSLog(@"mySunTimes.riseTime is nil");
             
             NSLog(@"rise: %.2d:%.2d:%.2d",rise.hours,rise.minutes,(int) round(rise.seconds));
             NSLog(@"set: %.2d:%.2d:%.2d",set.hours,set.minutes,(int) round(set.seconds));

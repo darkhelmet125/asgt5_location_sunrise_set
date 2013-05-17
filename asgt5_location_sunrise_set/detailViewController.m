@@ -19,6 +19,8 @@
 @synthesize sunriseLabel;
 @synthesize sunsetLabel;
 @synthesize travelTimeLabel;
+@synthesize myCity;
+@synthesize myTimes;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +35,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"%p",self);
+    self.userLocation.text = [NSString stringWithFormat:@"%@, %@",self.myCity.city, self.myCity.state];
+    self.timezone.text = [NSString stringWithFormat:@"%@",self.myCity.timezone];
+    self.sunriseLabel.text = [NSString stringWithFormat:@"%@",self.myTimes.riseTime];
+    self.sunsetLabel.text = [NSString stringWithFormat:@"%@",self.myTimes.setTime];
+    self.travelTimeLabel.text = [NSString stringWithFormat:@"%@",self.myTimes.travelTime];
 }
 
 - (void)didReceiveMemoryWarning

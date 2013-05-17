@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "City.h"
+#import "RiseSetTravelTimes.h"
 #import "USCitiesTimezoneDatabase.h"
 
-@interface CityTableViewController : UITableViewController
+@interface CityTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) NSArray* cities;
 @property (nonatomic, retain) NSString* state;
-@property int rowPressed;
 @property (nonatomic, retain) City* myCity;
+@property RiseSetTravelTimes* mySunTimes;
+@property NSString* mySunrise;
+@property NSString* mySunset;
+@property NSString* myTravel;
 
 @end

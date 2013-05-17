@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5098231745CA5900D97FD7 /* RiseSetTravelTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5098221745CA5900D97FD7 /* RiseSetTravelTimes.m */; };
 		3D7020FE17389D6F000AD095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7020FD17389D6F000AD095 /* UIKit.framework */; };
 		3D70210017389D6F000AD095 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7020FF17389D6F000AD095 /* Foundation.framework */; };
 		3D70210217389D6F000AD095 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D70210117389D6F000AD095 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D5098211745CA5900D97FD7 /* RiseSetTravelTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiseSetTravelTimes.h; sourceTree = "<group>"; };
+		3D5098221745CA5900D97FD7 /* RiseSetTravelTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiseSetTravelTimes.m; sourceTree = "<group>"; };
 		3D7020FA17389D6F000AD095 /* asgt5_location_sunrise_set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asgt5_location_sunrise_set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7020FD17389D6F000AD095 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3D7020FF17389D6F000AD095 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				3D7021301739CC81000AD095 /* State.m */,
 				3D70213E1739E90B000AD095 /* City.h */,
 				3D70213F1739E90B000AD095 /* City.m */,
+				3D5098211745CA5900D97FD7 /* RiseSetTravelTimes.h */,
+				3D5098221745CA5900D97FD7 /* RiseSetTravelTimes.m */,
 				3D70210417389D70000AD095 /* Supporting Files */,
 			);
 			path = asgt5_location_sunrise_set;
@@ -232,6 +237,7 @@
 				3D70213D1739E784000AD095 /* CityTableViewController.m in Sources */,
 				3D7021401739E90B000AD095 /* City.m in Sources */,
 				3D7C052F17448F8D007E2CBD /* detailViewController.m in Sources */,
+				3D5098231745CA5900D97FD7 /* RiseSetTravelTimes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
