@@ -184,15 +184,15 @@
             self.mySunset = sunset;
             self.myTravel = travel;
             
-            [self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:self.mySunset andTravelTime:self.myTravel];
+            //[self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:self.mySunset andTravelTime:self.myTravel];
             
             NSLog(@"sunrise: %@",self.mySunTimes.riseTime);
             NSLog(@"sunset: %@",self.mySunTimes.setTime);
             NSLog(@"travel: %@",self.mySunTimes.travelTime);
             
             detailVC.myCity = [self.cities objectAtIndex:selectedRowIndex.row];
-            //detailVC.myTimes = [self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:mySunset andTravelTime:myTravel];
-            
+            //[detailVC.myTimes initWithRiseTime:sunrise andSetTime:sunset andTravelTime:travel];
+            detailVC.myTimes = [self.mySunTimes initWithRiseTime:self.mySunrise andSetTime:self.mySunset andTravelTime:self.myTravel];
             /*
             NSLog(@"sunrise1: %@",detailVC.myTimes.riseTime);
             NSLog(@"sunset1: %@",detailVC.myTimes.setTime);
